@@ -1,0 +1,70 @@
+---
+title: "Selectors"
+description: "Selector reference"
+---
+
+# Selectors
+
+Selectors are the way to target and style elements in aether.
+
+Using them is relatively simple. Below is a simple selector example:
+
+```aether
+
+for @item {
+    dec bgColor as background-color;
+
+    let backgroundColor = "#000000";
+}
+```
+
+Let's break this down:
+
+The `for` keyword is used to tell aether what elements to target.
+
+The `@item` is the selector. It tells aether to target all elements with the class `item` where `item` is the class name of the element you want to target.
+
+The `dec` keyword is used to declare a new style property where `bgColor` is the name of the style property.
+
+The `as` keyword is used to tell aether what the style property should be referred to as, in this case `background-color`.
+
+The `let` keyword is used to assign a value to `background-color`
+
+The `;` at the end of the line is used to terminate the statement.
+
+## Selector Types
+
+There are two types of selectors in aether:
+
+- **Element Selectors** - Used to target elements based on their class name.
+- **Individual Selectors** - Used to target elements based on their individual identifier.
+
+### Element Selectors
+
+Element selectors are used to target elements based on their class name. They are denoted by the `@` symbol followed by the class name of the element you want to target.
+
+For example, if you want to target all elements with the class `item`, you would use the following selector:
+
+```aether
+for @item {
+    dec bgColor as background-color;
+    let backgroundColor = "#000000";
+}
+```
+
+In this example, `@item` is the selector that tells aether to target all elements with the class `item`.
+
+### Individual element Selectors
+
+Individual element selectors are used to target a specific element rather than a group of them. They are very useful for applying individual styles.
+
+For example, you want to target a specific element with the identifier `item-1`, you would use the following selector:
+
+```aether
+for #item-1 {
+    dec bgColor as background-color;
+    let backgroundColor = "#000000";
+}
+```
+
+In this example, `#item-1` is the selector that tells aether to target the element with the identifier `item-1`.
