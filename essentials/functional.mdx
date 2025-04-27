@@ -70,7 +70,7 @@ config {
     typesafety: true;
 }
 
-function myFunction(param1: string, param2: number): string {
+function myFunction(param1: number, param2: number): number {
     return param1 + param2;
 }
 
@@ -84,7 +84,7 @@ In this example, we are defining a function called `myFunction`. This function t
 Conditionals, function similarly to conditionals in other programming languages. They are used to execute a block of code based on a condition. The syntax is as follows:
 
 ```aether
-function myFunction(param1: string, param2: number): string {
+function myFunction(param1: string): string {
     if (param1 === "hello") {
         return "Hello, world!";
     } else {
@@ -92,7 +92,7 @@ function myFunction(param1: string, param2: number): string {
     }
 }
 
-myFunction("hello", 123);
+myFunction("hello");
 ```
 
 In this example, we are defining a function called `myFunction`. This function takes two parameters: `param1` and `param2`. These parameters are both strings and numbers, respectively. The function returns a string. We are then declaring a variable called `myFunctionValue` and assigning it the value of the function `myFunction`.
