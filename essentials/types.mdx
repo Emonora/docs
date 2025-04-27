@@ -1,0 +1,73 @@
+#### Typing
+
+<Note>
+  Typing is required to be in all files if enabled in the config file. You
+  cannot use it in a file without typing enabled, or on a case by case basis.
+</Note>
+
+Typing is a powerful feature of aether. It allows you to define the types of variables, and to define the types of functions. **It must be enabled in the config file to work.** The syntax is as follows:
+
+```aether
+imp config from "aetherConfig";
+config {
+    typesafety: true;
+}
+```
+
+In this example, we are enabling typesafety in the config file. Now, we can define the types of variables and functions.
+
+#### Built in types
+
+When you enable typesafety, you can use the following built in types:
+
+- `string` - A string is a sequence of characters. It is used to represent text.
+- `number` - A number is a numeric value. It is used to represent numbers.
+- `boolean` - A boolean is a true or false value. It is used to represent true or false values.
+- `array` - An array is a list of values. It is used to represent a list of values.
+- `object` - An object is a collection of key value pairs. It is used to represent a collection of values.
+- `function` - A function is a block of code that can be called. It is used to represent a block of code that can be called.
+- `any` - The any type is a special type that can be used to represent any type. It is used to represent any type of value.
+- `void` - The void type is a special type that can be used to represent a function that does not return a value. It is used to represent a function that does not return a value.
+
+The above types are standard types with functional programming languages. But, aether also has some custom types. These are types that are specific to aether that can be used to make styling easier. They are as follows:
+
+#### Built in custom styling types
+
+- `color` – A color value that defines how something is displayed visually. It can be represented in different formats:
+
+  - `hex` – A hexadecimal color code, e.g., `#ff5733`.
+  - `rgb` – Red, Green, Blue color model, e.g., `rgb(255, 87, 51)`.
+  - `rgba` – RGB with Alpha (opacity), e.g., `rgba(255, 87, 51, 0.5)`.
+  - `hsl` – Hue, Saturation, Lightness model, e.g., `hsl(9, 100%, 60%)`.
+  - `hsla` – HSL with Alpha, e.g., `hsla(9, 100%, 60%, 0.5)`.
+  - `hwb` – Hue, Whiteness, Blackness model, e.g., `hwb(9 0% 0%)`.
+  - `lab` – CIE Lab color space, used for more accurate color representation, e.g., `lab(54.29% 80.82 69.88)`.
+  - `lch` – Lightness, Chroma, Hue format, e.g., `lch(54.29% 104.55 40.85)`.
+  - `named color` – Predefined color names like `red`, `blue`, `rebeccapurple`, etc.
+
+- `position` – Specifies how an element is positioned in a document. Common values include:
+  - `static` – Default positioning; elements follow the normal document flow.
+  - `relative` – Positioned relative to its normal position; offsets can adjust its placement.
+  - `absolute` – Positioned relative to the nearest positioned ancestor; removed from normal flow.
+  - `fixed` – Positioned relative to the viewport; remains in place during scrolling.
+  - `sticky` – Switches between relative and fixed, depending on scroll position.
+
+**More will be added in the future.**
+
+#### Custom types
+
+You can also define your own custom types. This is useful if you want to define a custom type that is specific to your project. The syntax is as follows:
+
+```aether
+imp config from "aetherConfig";
+config {
+    typesafety: true;
+}
+
+type MyCustomType {
+    property1: string;
+    property2: number;
+}
+```
+
+In this example, we are defining a custom type called `MyCustomType`. This type has two properties: `property1` and `property2`. These properties are both strings and numbers, respectively.

@@ -1,0 +1,46 @@
+---
+title: "Dec/Declare"
+description: "How to declare a style property"
+---
+
+The `dec` keyword is used **to declare a style property.** There are two ways that it can be written:
+
+`dec` followed by a style property name
+
+or
+
+`declare` followed by a style property name (more on this later)
+
+# Style Property Names
+
+<Tip>
+  You can use all of the available styling options in css with the std library.
+  (Excludes flex and grid)
+</Tip>
+
+Style property names are the names of the properties that you want to style. **They are the names of the CSS properties that you want to style.** For example, if you wanted to style the background color of an element, you would use the following: `dec bgColor`.
+
+The compiler can understand the following style property name syntaxes:
+
+`bgColor` - This is the camel case version of the style property name. It is the most common way to write style property names.
+
+`bgcolor` - This is the lowercase version of the style property name. It is the second most common way to write style property names.
+
+`background-color` - This is the kebab case version of the style property name. It is the third most common way to write style property names.
+
+`BackgroundColor` - This is the pascal case version of the style property name. It is the fourth most common way to write style property names.
+
+# Using `declare` instead of `dec`
+
+What's the difference between `dec` and `declare`? **Verbosity.** Both the `dec` and `declare` keywords do the exact same thing.
+
+<Warning>
+  The `declare` keyword is not valid normally. You have to enable verbose mode
+  in the config file to use it. More [here](config).
+</Warning>
+
+After enabling verbose mode, you can use the `declare` keyword to declare a style property. The syntax is as follows:
+
+```aether
+declare bgColor;
+```

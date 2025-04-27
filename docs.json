@@ -19,7 +19,17 @@
           },
           {
             "group": "Essentials",
-            "pages": ["essentials/syntax"]
+            "pages": [
+              "essentials/syntax",
+              "essentials/for",
+              "essentials/dec",
+              "essentials/as",
+              "essentials/scope",
+              "essentials/imports",
+              "essentials/config",
+              "essentials/types",
+              "essentials/functional"
+            ]
           }
         ]
       },

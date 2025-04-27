@@ -1,0 +1,60 @@
+---
+title: "Imports"
+description: "How imports/exports work in Aether"
+---
+
+Aether has a powerful import/export system. This allows you to import variables from other files, and export variables to other files.
+
+# Imports
+
+<Tip>
+  You can use `import` instead of `imp` in Aether.(See verbose mode:
+  [here](config#the-verbosemode-option))
+</Tip>
+
+Imports are used to import variables from other files. Below is an example:
+
+```aether
+imp bgColor from "aetherConfig";
+```
+
+Due to Aether's import system, the braces will throw an error. This is because the braces are used to denote a block of code.
+
+# Exports
+
+<Tip>
+  You can use `export` instead of `exp` in Aether. (See verbose mode:
+  [here](config#the-verbosemode-option))
+</Tip>
+
+Exports are used to export variables to other files. Below is an example:
+
+```aether
+exp bgColor;
+```
+
+This will export the variable `bgColor` to other files.
+
+# Importing from the Aether standard library
+
+You can import from the Aether standard library. This is how you can use the `config` import, or the `functional` import. (More on that later)
+
+```aether
+import config from "aetherConfig";
+```
+
+<Tip>
+  All imports from the Aether standard library are camelCased, with `aether`
+  before the name of the import.
+</Tip>
+
+## Aether is import based
+
+Aether is an import based language. Essentially, this means that Aether ships with the smallest possible built in library. So things that you would find in "functional" programming languages are an import.
+
+The majority of control structures are in this `functional` import.
+
+<Info>
+  The `functional` import (and any other import) is not bundled in production
+  builds unless you use it in your code. This reduces compiled file sizes.
+</Info>

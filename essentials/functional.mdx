@@ -1,0 +1,110 @@
+---
+title: "Functional Programming Control Structures"
+description: "How to use the functional programming control structures in Aether"
+---
+
+# Functions
+
+Functions are a powerful feature of aether. They allow you to define a block of code that can be called. The syntax is as follows:
+
+```aether
+imp config from "aetherConfig";
+config {
+    typesafety: true;
+}
+
+function myFunction() {
+    return "Hello, world!";
+}
+```
+
+In this example, we are defining a function called `myFunction`. This function returns the string `"Hello, world!"`. We can call this function using the following syntax:
+
+```aether
+myFunction();
+```
+
+In this example, we are calling the function `myFunction`. This will return the string `"Hello, world!"`.
+
+## Function parameters
+
+Functions can also take parameters. This is useful if you want to pass values to the function. The syntax is as follows:
+
+```aether
+imp config from "aetherConfig";
+config {
+    typesafety: true;
+}
+
+function myFunction(param1: string, param2: number) {
+    return param1 + param2;
+}
+```
+
+In this example, we are defining a function called `myFunction`. This function takes two parameters: `param1` and `param2`. These parameters are both strings and numbers, respectively. The function returns the sum of the two parameters.
+
+## Function return type
+
+Functions can also have a return type. This is useful if you want to specify the type of value that the function returns. The syntax is as follows:
+
+```aether
+imp config from "aetherConfig";
+config {
+    typesafety: true;
+}
+
+function myFunction(param1: string, param2: number): string {
+    return param1 + param2;
+}
+```
+
+In this example, we are defining a function called `myFunction`. This function takes two parameters: `param1` and `param2`. These parameters are both strings and numbers, respectively. The function returns a string.
+
+## Functions as values
+
+You can also use functions as values. This is useful if you want to use a function as a value. The syntax is as follows:
+
+```aether
+imp config from "aetherConfig";
+config {
+    typesafety: true;
+}
+
+function myFunction(param1: string, param2: number): string {
+    return param1 + param2;
+}
+
+let myFunctionValue = myFunction();
+```
+
+In this example, we are defining a function called `myFunction`. This function takes two parameters: `param1` and `param2`. These parameters are both strings and numbers, respectively. The function returns a string. We are then declaring a variable called `myFunctionValue` and assigning it the value of the function `myFunction`.
+
+# Conditionals
+
+Conditionals, function similarly to conditionals in other programming languages. They are used to execute a block of code based on a condition. The syntax is as follows:
+
+```aether
+function myFunction(param1: string, param2: number): string {
+    if (param1 === "hello") {
+        return "Hello, world!";
+    } else {
+        return "Goodbye, world!";
+    }
+}
+
+myFunction("hello", 123);
+```
+
+In this example, we are defining a function called `myFunction`. This function takes two parameters: `param1` and `param2`. These parameters are both strings and numbers, respectively. The function returns a string. We are then declaring a variable called `myFunctionValue` and assigning it the value of the function `myFunction`.
+
+# Loops
+
+Loops are used to execute a block of code multiple times. The syntax is as follows:
+
+```aether
+repeat (var i = 0; i < 10; i++) {
+    console.log(i);
+}
+```
+
+Notice anything different? Aether has multiple variable declaration methods. `var` is exclusive to loops, and is used to declare a variable that is only available in the loop. This allows the loops to be more useful to you.

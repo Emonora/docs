@@ -1,0 +1,78 @@
+---
+title: "Aether Configuration"
+description: "How to use the Aether configuration system"
+---
+
+## Aether Config File
+
+The aether config file is a file that is used to configure aether. It is used to set up the environment variables, and to set up the default values for the variables. There are numerous ways to write a config file. You can explore all possible options on the individual config page later on, but here is a quick run down.
+
+<Tip>Your config file should be named `rules.config.aether`</Tip>
+
+### Syntax
+
+The syntax for a basic config file with an environment variable is as follows:
+
+```aether
+imp config from "aetherConfig";
+
+for * {
+    dec bgColor as defaultBGColor with value "#000000";
+}
+```
+
+#### What is the `config` import?
+
+The `config` import is a part of the std library, that isn't bundled in production builds. It essentially just tells aether how you want the compiler to work, and if you want any global variables.
+
+#### The config object
+
+The config object is an object that is used to configure the aether compiler, and how the language functions in your project. Below are a few options, and an example of the object.
+
+```aether
+imp config from "aetherConfig";
+config {
+    minify: true;
+    typeSafety: true;
+    globalVariables: true;
+}
+```
+
+#### The `minify` option
+
+The `minify` option is used to tell aether whether or not to minify the compiled code. The default value is `false`.
+
+#### The `typeSafety` option
+
+The `typeSafety` option is used to tell aether whether or not to enable typesafety. The default value is `false`.
+
+#### The `globalVariables` option
+
+The `globalVariables` option is used to tell aether whether or not to enable global variables. The default value is `false`.
+
+#### The `verboseMode` option
+
+While not in this example config, the `verboseMode` option is used to tell aether whether or not to enable verbose mode. The default value is `false`.
+
+Verbose mode is a mode that allows you to use the extended syntax version of aether keywords. i.e. `declare` instead of `dec`, and `import` instead of `imp`. The default value is `false`.
+
+### Environment variables
+
+Environment variables are variables that can be used in any file. They are defined in the `rules.config.aether` file. The syntax is as follows:
+
+```aether
+imp config from "aetherConfig";
+
+for * {
+    dec bgColor as defaultBGColor with value "#000000";
+}
+
+<REST OF YOUR CONFIG HERE>
+```
+
+This is a simple example of how to declare an environment variable, notice that we are using the `*` selector on our `for` block. This tells aether that we want to give this variable to all elements.
+
+<Tip>
+  You don't actually need an `exp` keyword to export a environment variable. It
+  is automatically exported since your using the `*` selector.
+</Tip>

@@ -1,0 +1,47 @@
+---
+title: "For"
+description: "What is the for keyword and how to use it"
+---
+
+The `for` keyword is used to tell aether what elements to target.
+
+```aether
+for @item {
+    <YOUR CODE HERE>
+}
+```
+
+Essentially, this keyword is used to tell aether what to style. The methodology for it is as follows:
+
+You use `for` to tell aether "This is what I want to style".
+
+## Selectors
+
+Selectors are the way to target and style elements in aether. Below are the currently supported selectors:
+
+- **Bulk Selectors** - Used to target elements based on their class name.
+- **Individual Selectors** - Used to target elements based on their individual identifier.
+
+### Bulk Selectors
+
+You use the `@` symbol to tell aether what you want to style. The `@` symbol is used to denote a class name. So, for example, if you wanted to style all elements with the class `item`, you would use the following code:
+
+```aether
+for @item {
+    <YOUR CODE HERE>
+}
+```
+
+In this example, `@item` is the selector that tells aether to target all elements with the class `item`.
+
+### Individual element Selectors
+
+You can also use the `#` symbol to denote a specific element. For example, if you wanted to style a specific element with the identifier `item`, you would use the following code:
+
+```aether
+for #item {
+    <YOUR CODE HERE>
+}
+```
+
+In this example, `#item` is the selector that tells aether to target the element with the identifier `item`.

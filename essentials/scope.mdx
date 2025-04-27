@@ -1,0 +1,90 @@
+---
+title: "Scope"
+description: "How does aether scope work?"
+---
+
+While the `scope` isn't an actual keyword, it is helpful to know how aether scopes variables.
+
+### Global vs. Local Scope
+
+Scope in aether is the same as scope in any other programming language. There are two types of scope: global and local.
+
+#### Global Scope
+
+Global scope means that it is available to everything in the file. For example, I can declare a variable like a default background color, and make it global. There are multiple ways to do this.
+
+#### Method 1. Using the `global` keyword
+
+```aether
+for @item {
+    dec global bgColor as defaultBGColor with value #000000;
+}
+```
+
+This introduces a lot of compilcation, so let's break it down.
+
+First, we declare the variable using the `dec` keyword. This tells aether that we are declaring a variable.
+
+Then we use the `global` keyword. This tells aether that we want to declare a global variable.
+
+Then we use the `as` keyword. This tells aether that we want it to be called `defaultBGColor`.
+
+Here's the new portion: `with value #000000;`. This tells aether that we want to set the value of the variable to `#000000`. The reason we do it like this is because when declaring a global variable, it is immutable by default after initalization. So, we have to set the value of the variable when we declare it.
+
+#### Immuatbality?
+
+Essentially, immutability means that the variable cannot be changed after it is declared. This is useful for global variables because it prevents them from being changed by accident. Of course, they can be changed locally, i.e. within a `for` block. But, they cannot be changed globally. This allows for more internal customiazation of the variable, white still preserving the global value.
+
+#### Method 2. Declaring the variable outside of a `for` block
+
+While it is technically possible to declare a global variable using method 1, it is not the best way to do it. It is better to declare the variable outside of a `for` block. This is because it allows for more internal customiazation of the variable, while still preserving the global value.
+
+```aether
+dec global bgColor as defaultBGColor with value #000000;
+```
+
+This is the same as method 1, but it is declared outside of a `for` block.
+
+### Local Scope
+
+Local scope means that it is only available to the `for` block that it is declared in. For example, I can declare a variable like a default background color inside of a `for` block to make it local.
+This means that it is only available to the `for` block that it is declared in.
+
+#### Local to Global variables
+
+Local variables can be _very_ useful at times. But what if you want to provide the file or other files with the value? You can't do it with global variables due to immutability. But, you can do it with local variables.
+
+<Tip>You can find more information on imports and exports [here](imports).</Tip>
+
+#### The `exp` method
+
+<Tip>
+  You can use `export` instead of `exp` in Aether. (See verbose mode:
+  [here](config#the-verbosemode-option))
+</Tip>
+
+You can use the `exp` keyword to export a local variable to a global scope, i.e. the file. But you can also use the `export` keyword to export a local variable to different files, or use it as an aether environment variable. The syntax is as follows:
+
+```aether
+for @item {
+    dec bgColor as defaultBGColor with value #000000;
+    exp bgColor;
+}
+```
+
+In this example, `defaultBGColor` is the local variable that we want to export. The `exp` keyword is used to tell aether that we want to export the variable. This allows us to use the variable in other files, or as an aether environment variable.
+
+#### The `import` method
+
+<Tip>
+  You can use `import` instead of `imp` in Aether. (See verbose mode:
+  [here](config#the-verbosemode-option))
+</Tip>
+
+What if you want to use a variable from another file? You can use the `imp` keyword to import a variable from another file. The syntax is as follows:
+
+```aether
+imp defaultBGColor from "./file.aether";
+```
+
+In this example, `defaultBGColor` is the variable that we want to import. The `imp` keyword is used to tell aether that we want to import the variable. This allows us to use the variable in other files, or as an aether environment variable.
