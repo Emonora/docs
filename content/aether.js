@@ -1,4 +1,4 @@
-(function (Prism) {
+((Prism) => {
   Prism.languages.aether = {
     comment: /\/\/.*/,
     keyword:
